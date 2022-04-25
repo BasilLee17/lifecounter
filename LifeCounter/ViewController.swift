@@ -107,6 +107,7 @@ class ViewController: UIViewController {
     
     @objc func p1minusButtonClick(_ sender: UIButton) {
         p1score = p1score - 1
+        print("Player 1 lost one life.")
         changeScore(1)
     }
     @objc func p1plusButtonClick(_ sender: UIButton) {
