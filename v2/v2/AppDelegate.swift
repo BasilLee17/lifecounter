@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  LifeCounter
+//  v2
 //
-//  Created by Isabelle Donsbach on 4/20/22.
+//  Created by Isabelle Donsbach on 4/27/22.
 //
 
 import UIKit
