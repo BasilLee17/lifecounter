@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var curPlayers = 4
     var players: [Player] = []
+    static var events: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,6 +127,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBAction func restartClick() {
         curPlayers = 4
         makePlayers()
+        ViewController.events = []
         endGame.isHidden = true
         endGameLabel.isHidden = true
         restart.isHidden = true
@@ -137,24 +139,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 extension ViewController: PlayerTableViewCellDelegate {
     
     func minusButtonClick(with player: Player) {
-        print("\(player.name)")
+        ViewController.events.append("\(player.name) lost one life.")
         player.change(-1)
         isEndGame(player: player)
     }
     
     func plusButtonClick(with player: Player) {
-        print("\(player.name)")
+        ViewController.events.append("\(player.name) gained one life.")
         player.change(1)
     }
     
     func minusCustomButtonClick(with player: Player) {
-        print("\(player.name)")
+        ViewController.events.append("\(player.name) lost five life.")
         player.change(-5)
         isEndGame(player: player)
     }
     
     func plusCustomButtonClick(with player: Player) {
-        print("\(player.name)")
+        ViewController.events.append("\(player.name) gained five life.")
         player.change(5)
     }
 }

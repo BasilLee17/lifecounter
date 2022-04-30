@@ -11,13 +11,11 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBOutlet weak var table: UITableView!
     
-    var events: [String] = []
+    var events: [String] = ViewController.events
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        events.append("p1 lost 1 life")
-        events.append("p1 got 3 life")
         table.dataSource = self
         table.delegate = self
     }
@@ -32,8 +30,8 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    /*func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UIScreen.main.bounds.height / CGFloat(events.count)
-    }
+    }*/
     
 }
